@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  gbtnode:
+    build: .
+    container_name: gbtnode
+    environment:
+      - GENESIS_SERVER_URL=https://genesis-sever-node.onrender.com
+      - CHAIN_ID=999
+      - SIGNER=0x0000000000000000000000000000000000000001
+    ports:
+      - "9636:9636"
+      - "30303:30303"
+      - "30303:30303/udp"
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data
